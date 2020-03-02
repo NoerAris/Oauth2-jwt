@@ -17,3 +17,11 @@ grant_type password
 username : Setiawan
 password : password
 grant_type password
+
+# Login :
+Method : Post
+localhost:8080/auth/oauth/token
+
+# Signup
+Method : Post
+localhost:8080/auth/users/sign-up
