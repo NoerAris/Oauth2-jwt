@@ -21,10 +21,15 @@ import com.fasterxml.jackson.annotation.JsonProperty.Access;
 import com.oauth.oauthjwt.dto.UserDto;
 
 @Entity
+//Here both Column1 and Column2 acts as unique constraints separately.
+//Ex : if any time either the value of column1 or column2 value matches then you will get UNIQUE_CONSTRAINT Error.
 @Table(name = "mst_user", uniqueConstraints = {
 		@UniqueConstraint(columnNames = {"username"}),
 		@UniqueConstraint(columnNames = {"email"})
 })
+
+//Here both column1 and column2 combined values acts as unique constraints
+//@Table(name = "mst_user", uniqueConstraints = {@UniqueConstraint(columnNames = {"username", "email"})})
 public class MasterUser {
 	
 	@Id
